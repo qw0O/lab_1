@@ -100,6 +100,12 @@ if __name__ == '__main__':
         arr = generate_array(n)
         t = measure_time(linear_search, arr)
         print(f"n={n}: {t:.6f} сек")
+
+    print("\n--- 2. Поиск второго максимального элемента ---")
+    for n in sizes:
+        arr = generate_array(n)
+        t = measure_time(find_second_max, arr)
+        print(f"n={n}: {t:.6f} сек")
         
     print("\n--- 3. Бинарный поиск ---")
     for n in sizes:
