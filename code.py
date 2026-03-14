@@ -9,23 +9,23 @@ def generate_array(n):
 #   Функция замера времени
 def measure_time(func, data):
     start = time.perf_counter()
-    func(data) # Запускаем переданную функцию
+    func(data)
     end = time.perf_counter()
     return end - start
 
-#   Функция замера времени И памяти (для сортировки)
+#   Функция замера времени и памяти (для сортировки)
 def measure_time_and_space(func, data):
-    tracemalloc.start() # Начинаем следить за памятью
+    tracemalloc.start()
     start = time.perf_counter()
     
     func(data)
     
     end = time.perf_counter()
-    current, peak = tracemalloc.get_traced_memory() # Получаем пиковое значение памяти
+    current, peak = tracemalloc.get_traced_memory() 
     tracemalloc.stop()
     
     time_taken = end - start
-    space_taken_kb = peak / 1024 # Переводим байты в Килобайты
+    space_taken_kb = peak / 1024 #Перевод байты в Килобайты
     return time_taken, space_taken_kb
 
 
@@ -77,7 +77,7 @@ def multiplication_table(n):
     return table
 
 
-#Сортировка
+#5. Сортировка
 def insertion_sort(arr):
     arr_copy = arr.copy() 
     for i in range(1, len(arr_copy)):
